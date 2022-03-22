@@ -5,7 +5,8 @@ import { FaUser } from 'react-icons/fa';
 const Logo = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: palevioletred;
+  color: #006767;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.header`
@@ -34,6 +35,7 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   font-size: 1rem;
+  cursor: pointer;
 `;
 
 const NavLink = styled.a`
@@ -51,6 +53,7 @@ const UserProfileWrapper = styled.div`
 
 const UserProfile = styled.a`
   text-decoration: none;
+  cursor: pointer;
 `;
 
 const Header = () => {
@@ -69,7 +72,7 @@ const Header = () => {
   const userStyle = {
     width: '1.5rem',
     height: '1.5rem',
-    color: 'blue',
+    color: '#006767',
   };
 
   return (
