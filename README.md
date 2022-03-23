@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/MENGSTU-FENTAW-success) [![](https://img.shields.io/badge/LIVE-DEMO-blue)](https://mengiefen.github.io/book-store-react-redux/)
 
-# Bookstore App
+# The Bookstore App
 
 The Bookstore is a website built with React. In this application the user will create an MVP version of it that allows to:
 
