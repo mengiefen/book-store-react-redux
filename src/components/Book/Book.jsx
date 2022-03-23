@@ -7,13 +7,13 @@ const Wrapper = styled.div`
   width: 80%;
   height: auto;
   padding: 1rem 2rem;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  margin: 11vh auto 1rem auto;
-  box-shadow: 3px 3px 5px lightgray, -3px -3px 5px lightgray;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  margin: 6.5rem auto 1rem auto;
+  box-shadow: 1px 1px 100px #e8e8e8, -1px -1px 100px #e8e8e8;
   display: flex;
   justify-content: space-between;
-  background-color: #eee;
+  background-color: #fff;
 `;
 
 const LeftWrapper = styled.div`
@@ -34,9 +34,9 @@ const BookTitle = styled.h2`
 `;
 
 const BookAuthor = styled.p`
-  font-size: 1rem;
+  font-size: 0.875rem;
   margin-bottom: 1.5rem;
-  color: #006767;
+  color: #4386bf;
 `;
 
 const ButtonWrapper = styled.div`
@@ -45,8 +45,8 @@ const ButtonWrapper = styled.div`
 `;
 
 const OutlineButton = styled.button`
-  color: #006767;
-  font-size: 1rem;
+   color: #4386bf;
+  font-size: 0.9rem;
   outline: none;
   border: none;
   background-color: transparent;
@@ -77,9 +77,13 @@ const Chapter = styled.p`
 `;
 
 const ButtonFill = styled.button`
-  background-color: #006767;
-  color: #eee;
-  padding: 0.5rem 1.5rem;
+  background-color: #0290ff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   font-weight: 600;
   cursor: pointer;
 `;
