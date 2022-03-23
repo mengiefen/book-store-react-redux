@@ -11,11 +11,12 @@ const Wrapper = styled.div`
   align-items: start;
   background-color: #fafafa;
   padding: 0.5rem 1rem;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 const FormTitle = styled.h2`
   font-size: 1.5rem;
-  margin-bottom:1.5rem ;
+  margin-bottom: 1.5rem;
   color: #777;
 `;
 
@@ -31,11 +32,11 @@ const FormInput = styled.input`
   background-color: #fafafa;
   border: 1px solid#e8e8e8;
   width: 50%;
-  font-size: 1rem; 
-  &:hover, 
+  font-size: 1rem;
+  &:hover,
   &:focus {
     border: 1px solid #0290ff;
-  } 
+  }
 `;
 
 const FormSelect = styled.select`
@@ -45,7 +46,7 @@ const FormSelect = styled.select`
   font-size: 1rem;
   width: 30%;
 
-  &:hover, 
+  &:hover,
   &:focus {
     border: 1px solid #0290ff;
   }
