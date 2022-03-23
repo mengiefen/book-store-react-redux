@@ -45,7 +45,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const OutlineButton = styled.button`
-   color: #4386bf;
+  color: #4386bf;
   font-size: 0.9rem;
   outline: none;
   border: none;
@@ -124,7 +124,9 @@ const Book = () => {
       </MiddleWrapper>
 
       <RightWrapper>
-        <div style={{ color: '#777', paddingBottom: '0.4rem' }}>CURRENT CHAPTER</div>
+        <div style={{ color: '#777', paddingBottom: '0.4rem' }}>
+          CURRENT CHAPTER
+        </div>
         <Chapter>Chapter 17</Chapter>
         <ButtonFill>UPDATE PROGRESS</ButtonFill>
       </RightWrapper>
