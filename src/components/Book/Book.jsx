@@ -10,11 +10,15 @@ const Wrapper = styled.div`
   padding: 1rem 2rem;
   border: 1px solid #e8e8e8;
   border-radius: 4px;
-  margin: 6.5rem auto 1rem auto;
+  margin: 0.2rem auto 0 auto;
   box-shadow: 1px 1px 100px #e8e8e8, -1px -1px 100px #e8e8e8;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
+
+  &:hover {
+    border: 1px solid #4386bf;
+  }
 `;
 
 const LeftWrapper = styled.div`
@@ -92,12 +96,12 @@ const ButtonFill = styled.button`
 const Book = (props) => {
   const { book } = props;
 
-  return book.map((bookItem) => (
+  return (
     <Wrapper key={book.id}>
       <LeftWrapper>
-        <BookType>{bookItem.category}</BookType>
-        <BookTitle>{bookItem.title}</BookTitle>
-        <BookAuthor>{bookItem.author}</BookAuthor>
+        <BookType>{book.category}</BookType>
+        <BookTitle>{book.title}</BookTitle>
+        <BookAuthor>{book.author}</BookAuthor>
         <ButtonWrapper>
           <OutlineButton>Comment</OutlineButton>
           <OutlineButton>Remove</OutlineButton>
@@ -107,11 +111,11 @@ const Book = (props) => {
 
       <MiddleWrapper>
         <div style={{ width: 60, height: 60 }}>
-          <CircularProgressbar value={bookItem.progress} maxValue={100} />
+          <CircularProgressbar value={book.progress} maxValue={100} />
         </div>
 
         <Percentage>
-          {`${bookItem.progress}%`}
+          {`${book.progress}%`}
           <span
             style={{
               display: 'block',
@@ -133,31 +137,27 @@ const Book = (props) => {
         <ButtonFill>UPDATE PROGRESS</ButtonFill>
       </RightWrapper>
     </Wrapper>
-  ));
+  );
 };
 
 Book.defaultProps = {
-  book: [
-    {
-      category: 'Action',
-      Title: 'The Hunger Games',
-      author: 'Suzanne Collins',
-      id: 1,
-      progress: 66,
-    },
-  ],
+  book: {
+    category: 'Action',
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    id: Date.now(),
+    progress: 66,
+  },
 };
 
 Book.propTypes = {
-  book: PropTypes.arrayOf(
-    PropTypes.shape({
-      category: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
-      progress: PropTypes.number.isRequired,
-    }),
-  ),
+  book: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    progress: PropTypes.number.isRequired,
+  }),
 };
 
 export default Book;
