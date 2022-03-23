@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -88,16 +89,17 @@ const ButtonFill = styled.button`
   cursor: pointer;
 `;
 
-const Book = () => {
-  const text = 'Comments';
-  return (
-    <Wrapper>
+const Book = (props) => {
+  const { book } = props;
+
+  return book.map((bookItem) => (
+    <Wrapper key={book.id}>
       <LeftWrapper>
-        <BookType>Action</BookType>
-        <BookTitle> The Hunger Games</BookTitle>
-        <BookAuthor>Suzanne Collins</BookAuthor>
+        <BookType>{bookItem.category}</BookType>
+        <BookTitle>{bookItem.title}</BookTitle>
+        <BookAuthor>{bookItem.author}</BookAuthor>
         <ButtonWrapper>
-          <OutlineButton>{text}</OutlineButton>
+          <OutlineButton>Comment</OutlineButton>
           <OutlineButton>Remove</OutlineButton>
           <OutlineButton>Edit</OutlineButton>
         </ButtonWrapper>
@@ -105,11 +107,11 @@ const Book = () => {
 
       <MiddleWrapper>
         <div style={{ width: 60, height: 60 }}>
-          <CircularProgressbar value={66} maxValue={100} />
+          <CircularProgressbar value={bookItem.progress} maxValue={100} />
         </div>
 
         <Percentage>
-          66%
+          {`${bookItem.progress}%`}
           <span
             style={{
               display: 'block',
@@ -131,7 +133,31 @@ const Book = () => {
         <ButtonFill>UPDATE PROGRESS</ButtonFill>
       </RightWrapper>
     </Wrapper>
-  );
+  ));
+};
+
+Book.defaultProps = {
+  book: [
+    {
+      category: 'Action',
+      Title: 'The Hunger Games',
+      author: 'Suzanne Collins',
+      id: 1,
+      progress: 66,
+    },
+  ],
+};
+
+Book.propTypes = {
+  book: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      progress: PropTypes.number.isRequired,
+    }),
+  ),
 };
 
 export default Book;
