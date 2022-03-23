@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { faker } from '@faker-js/faker';
 
 const Wrapper = styled.div`
   width: 80%;
-  margin: 2rem auto 0 auto;
+  margin: 3rem auto 0 auto;
   border-radius: 1px solid #777;
   height: 20vh;
   display: flex;
@@ -16,9 +17,10 @@ const Wrapper = styled.div`
 `;
 
 const FormTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 1.5rem;
-  color: #777;
+  font-weight: 700;
+  color: #888;
 `;
 
 const FormGroup = styled.form`
@@ -66,19 +68,40 @@ const ButtonFill = styled.button`
 `;
 
 const Form = ({ onAddBook }) => {
-  const categories = [
-    'Action',
-    'Science Fiction',
-    'Economy',
-    'Engineerig',
-    'Software',
-  ];
+  const [book, setBook] = useState({
+    title: '',
+    author: faker.name.findName(),
+    progress: Math.floor(Math.random() * 100),
+    id: Date.now(),
+    category: '',
+  });
+
+  const categories = ['Action', 'Science Fiction', 'Economy', 'Engineerig', 'Software'];
+
+  const handleChange = (e) => {
+    setBook({
+      ...book,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (book.category && book.title) onAddBook(book);
+  };
+
   return (
     <Wrapper>
       <FormTitle>ADD NEW BOOK</FormTitle>
-      <FormGroup onSubmit={(e) => onAddBook(e)}>
-        <FormInput type="text" placeholder="Book Title" />
-        <FormSelect>
+      <FormGroup onSubmit={handleSubmit}>
+        <FormInput
+          type="text"
+          name="title"
+          placeholder="Book Title"
+          value={book.title}
+          onChange={handleChange}
+        />
+        <FormSelect onChange={handleChange} name="category" value={book.category}>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}
