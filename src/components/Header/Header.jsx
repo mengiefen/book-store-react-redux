@@ -13,11 +13,12 @@ const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  height: 7vh;
+  height: 10vh;
   width: 100vw;
   padding: 0 4em;
   display: flex;
   align-items: center;
+  background-color: #eee;
 `;
 
 const NavBar = styled.nav`
