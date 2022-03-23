@@ -14,22 +14,26 @@ const Books = () => {
       category: 'Action',
       title: 'The Hunger Games',
       author: 'Suzanne Collins',
+      progress: 64,
+      id: 1,
+    },
+    {
+      category: 'Action',
+      title: 'Dune',
+      author: 'Frank Herbert',
+      progress: 88,
+      id: 2,
+    },
+    {
+      category: 'Economy',
+      title: 'Capital in the Twenty Century',
+      author: 'Suzanne Collins',
       progress: 66,
-      id: Date.now(),
+      id: 3,
     },
   ]);
-  const onAddBook = (e) => {
-    e.preventDefault();
-    setBooks([
-      ...books,
-      {
-        category: 'Action',
-        title: 'The Hunger Games',
-        author: 'Suzanne Collins',
-        progress: 66,
-        id: 1,
-      },
-    ]);
+  const onAddBook = (book) => {
+    setBooks([...books, book]);
   };
 
   return (
