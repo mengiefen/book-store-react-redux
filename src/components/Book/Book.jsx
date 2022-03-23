@@ -10,11 +10,12 @@ const Wrapper = styled.div`
   padding: 1rem 2rem;
   border: 1px solid #e8e8e8;
   border-radius: 4px;
-  margin: 0.2rem auto 0 auto;
-  box-shadow: 1px 1px 100px #e8e8e8, -1px -1px 100px #e8e8e8;
+  margin: 0.938rem auto 0 auto;
+  box-shadow: 1px 1px 5px #e8e8e8, -1px -1px 5px #e8e8e8;
   display: flex;
-  justify-content: space-between;
+  gap: 5%;
   background-color: #fff;
+  transition: border 0.5s;
 
   &:hover {
     border: 1px solid #4386bf;
@@ -25,6 +26,7 @@ const LeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  flex: 2;
 `;
 
 const BookType = styled.h4`
@@ -62,11 +64,13 @@ const MiddleWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex: 1;
 `;
 
 const Percentage = styled.div`
   color: #222;
   font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 const RightWrapper = styled.div`
@@ -130,9 +134,7 @@ const Book = (props) => {
       </MiddleWrapper>
 
       <RightWrapper>
-        <div style={{ color: '#777', paddingBottom: '0.4rem' }}>
-          CURRENT CHAPTER
-        </div>
+        <div style={{ color: '#777', paddingBottom: '0.4rem' }}>CURRENT CHAPTER</div>
         <Chapter>Chapter 17</Chapter>
         <ButtonFill>UPDATE PROGRESS</ButtonFill>
       </RightWrapper>
