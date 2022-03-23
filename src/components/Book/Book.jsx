@@ -9,10 +9,11 @@ const Wrapper = styled.div`
   padding: 1rem 2rem;
   border: 1px solid lightgray;
   border-radius: 5px;
-  margin: 8vh auto 1rem auto;
+  margin: 11vh auto 1rem auto;
   box-shadow: 3px 3px 5px lightgray, -3px -3px 5px lightgray;
   display: flex;
   justify-content: space-between;
+  background-color: #eee;
 `;
 
 const LeftWrapper = styled.div`
@@ -60,7 +61,7 @@ const MiddleWrapper = styled.div`
 
 const Percentage = styled.div`
   color: #222;
-  font-size: 2rem; 
+  font-size: 2rem;
 `;
 
 const RightWrapper = styled.div`
@@ -80,6 +81,7 @@ const ButtonFill = styled.button`
   color: #eee;
   padding: 0.5rem 1.5rem;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 const Book = () => {
@@ -118,9 +120,7 @@ const Book = () => {
       </MiddleWrapper>
 
       <RightWrapper>
-        <div style={{ color: '#777', paddingBottom: '0.4rem' }}>
-          CURRENT CHAPTER
-        </div>
+        <div style={{ color: '#777', paddingBottom: '0.4rem' }}>CURRENT CHAPTER</div>
         <Chapter>Chapter 17</Chapter>
         <ButtonFill>UPDATE PROGRESS</ButtonFill>
       </RightWrapper>
