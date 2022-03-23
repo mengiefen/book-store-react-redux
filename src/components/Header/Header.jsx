@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaUser } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.header`
   position: absolute;
@@ -12,13 +13,14 @@ const Wrapper = styled.header`
   display: flex;
   align-items: center;
   background-color: #fff;
-  border-bottom: solid 1px #e8e8e8;  
+  border-bottom: solid 1px #e8e8e8;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 const Logo = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: #0290ff;;
+  color: #0290ff;
   cursor: pointer;
 `;
 
@@ -38,10 +40,10 @@ const NavList = styled.ul`
 const NavItem = styled.li`
   font-size: 1rem;
   cursor: pointer;
-`;
 
-const NavLink = styled.a`
-  text-decoration: none;
+  .nav-link {
+    text-decoration: none;
+  }
 `;
 
 const UserProfileWrapper = styled.div`
@@ -63,7 +65,7 @@ const Header = () => {
   const NAV_ITEMS = [
     {
       name: 'Books',
-      link: 'books',
+      link: '/',
     },
     {
       name: 'Categories',
@@ -84,7 +86,9 @@ const Header = () => {
         <NavList>
           {NAV_ITEMS.map((nav) => (
             <NavItem key={nav.name}>
-              <NavLink className="nav-link">{nav.name}</NavLink>
+              <NavLink className="nav-link" to={nav.link}>
+                {nav.name}
+              </NavLink>
             </NavItem>
           ))}
         </NavList>
