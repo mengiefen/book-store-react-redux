@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   border-radius: 1px solid #777;
   height: 20vh;
   display: flex;
@@ -64,7 +65,7 @@ const ButtonFill = styled.button`
   cursor: pointer;
 `;
 
-const Form = () => {
+const Form = ({ onAddBook }) => {
   const categories = [
     'Action',
     'Science Fiction',
@@ -75,7 +76,7 @@ const Form = () => {
   return (
     <Wrapper>
       <FormTitle>ADD NEW BOOK</FormTitle>
-      <FormGroup>
+      <FormGroup onSubmit={(e) => onAddBook(e)}>
         <FormInput type="text" placeholder="Book Title" />
         <FormSelect>
           {categories.map((category) => (
@@ -88,6 +89,10 @@ const Form = () => {
       </FormGroup>
     </Wrapper>
   );
+};
+
+Form.propTypes = {
+  onAddBook: PropTypes.func.isRequired,
 };
 
 export default Form;
