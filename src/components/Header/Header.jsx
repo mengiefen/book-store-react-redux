@@ -12,6 +12,7 @@ const Wrapper = styled.header`
   padding: 0 6.25rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #fff;
   border-bottom: solid 1px #e8e8e8;
   font-family: 'Montserrat', sans-serif;
@@ -19,14 +20,13 @@ const Wrapper = styled.header`
 
 const Logo = styled.h1`
   font-size: 1.5em;
-  text-align: center;
   color: #0290ff;
   cursor: pointer;
 `;
 
 const NavBar = styled.nav`
-  width: auto;
   display: flex;
+  justify-content: space-between;
   gap: 3rem;
   align-items: center;
 `;
@@ -43,11 +43,11 @@ const NavItem = styled.li`
 
   .nav-link {
     text-decoration: none;
+    letter-spacing: 1.5px;
   }
 `;
 
 const UserProfileWrapper = styled.div`
-  margin-left: 55%;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
