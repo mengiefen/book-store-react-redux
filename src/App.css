@@ -7,6 +7,7 @@
   margin: 12vh auto 1rem auto;
   padding: 1rem;
   position: relative;
+  min-height: 80vh;
 }
 
 .App-logo {
