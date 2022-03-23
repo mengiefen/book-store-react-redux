@@ -2,23 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaUser } from 'react-icons/fa';
 
+const Wrapper = styled.header`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6rem;
+  width: 100%;
+  padding: 0 6.25rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: solid 1px #e8e8e8;  
+`;
+
 const Logo = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: #006767;
+  color: #0290ff;;
   cursor: pointer;
-`;
-
-const Wrapper = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 10vh;
-  width: 100vw;
-  padding: 0 4em;
-  display: flex;
-  align-items: center;
-  background-color: #eee;
 `;
 
 const NavBar = styled.nav`
@@ -73,7 +74,7 @@ const Header = () => {
   const userStyle = {
     width: '1.5rem',
     height: '1.5rem',
-    color: '#006767',
+    color: '#0290ff',
   };
 
   return (
