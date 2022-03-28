@@ -16,3 +16,14 @@ body {
   height: 100vh;
   background-color: #f5f6fa;
 }
+
+.App {
+  text-align: center;
+  background-color: #fafafa;
+  width: 90%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 5px 0 100px rgba(0, 0, 0, 0.1), -5px 0 100px rgba(0, 0, 0, 0.1);
+}
