@@ -16,12 +16,17 @@ import {
 const Book = (props) => {
   const { book } = props;
   const dispatch = useDispatch();
-  const { removeBook } = bindActionCreators(actionCreators, dispatch);
+  const { removeBook, filterBook } = bindActionCreators(
+    actionCreators,
+    dispatch,
+  );
 
   return (
     <Wrapper key={book.id}>
       <LeftWrapper>
-        <h4>{book.category}</h4>
+        <h4 onClickCapture={(e) => filterBook(e.target.textContent)}>
+          {book.category}
+        </h4>
         <h2>{book.title}</h2>
         <p>{book.author}</p>
         <ButtonWrapper>
