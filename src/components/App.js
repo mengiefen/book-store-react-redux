@@ -26,6 +26,13 @@ const theme = {
     darkBackgroundColor: '#e8e8e8',
     shadowColor: '#c8c8c8',
   },
+
+  devices: {
+    mobile: '567px',
+    note: '767px',
+    tab: '1024px',
+    desktop: '1280px',
+  },
 };
 
 function App() {

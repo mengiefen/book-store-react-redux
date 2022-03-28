@@ -18,6 +18,12 @@ const Wrapper = styled.div`
     box-shadow: 1px 1px 5px ${({ theme }) => theme.colors.shadowColor},
       -1px -1px 5px ${({ theme }) => theme.colors.shadowColor};
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.devices.tab}) {
+    padding: 1rem;
+    gap: 2%;
+    width: 95%;
+  }
 `;
 
 const LeftWrapper = styled.div`
@@ -78,5 +84,9 @@ const RightWrapper = styled.div`
 `;
 
 export {
-  Wrapper, LeftWrapper, MiddleWrapper, RightWrapper, ButtonWrapper,
+  Wrapper,
+  LeftWrapper,
+  MiddleWrapper,
+  RightWrapper,
+  ButtonWrapper,
 };
