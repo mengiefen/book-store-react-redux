@@ -6,30 +6,30 @@ const initialState = [
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
     progress: 64,
-    id: 1,
+    id: '1',
   },
   {
     category: 'Action',
     title: 'Dune',
     author: 'Frank Herbert',
     progress: 88,
-    id: 2,
+    id: '2',
   },
   {
     category: 'Economy',
     title: 'Capital in the Twenty Century',
     author: 'Suzanne Collins',
     progress: 66,
-    id: 3,
+    id: '3',
   },
 ];
 
-export default function bookReducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD:
       return [...state, action.book];
     case REMOVE:
-      return [...state].filter((book) => book.id !== action.id);
+      return state.filter((book) => book.id !== action.id);
     default:
       return state;
   }
