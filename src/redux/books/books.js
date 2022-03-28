@@ -1,30 +1,8 @@
 const ADD = 'bookStore/books/ADD';
 const REMOVE = 'bookStore/books/REMOVE';
-const initialState = [
-  {
-    category: 'Action',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    progress: 64,
-    id: '1',
-  },
-  {
-    category: 'Action',
-    title: 'Dune',
-    author: 'Frank Herbert',
-    progress: 88,
-    id: '2',
-  },
-  {
-    category: 'Economy',
-    title: 'Capital in the Twenty Century',
-    author: 'Suzanne Collins',
-    progress: 66,
-    id: '3',
-  },
-];
+const initialState = [];
 
-export default function reducer(state = initialState, action) {
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
       return [...state, action.book];
@@ -33,18 +11,16 @@ export default function reducer(state = initialState, action) {
     default:
       return state;
   }
-}
+};
 
-export function addBook(book) {
-  return {
-    type: ADD,
-    book,
-  };
-}
+export const addBook = (book) => ({
+  type: ADD,
+  book,
+});
 
-export function removeBook(id) {
-  return {
-    type: REMOVE,
-    id,
-  };
-}
+export const removeBook = (id) => ({
+  type: REMOVE,
+  id,
+});
+
+export default bookReducer;
