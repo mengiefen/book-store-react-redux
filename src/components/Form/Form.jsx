@@ -6,20 +6,30 @@ import { addNewBook } from '../../redux/books/books';
 
 import { ButtonFill } from '../Button/Button.styled';
 import {
-  Wrapper, FormGroup, FormInput, FormTitle, FormSelect,
+  Wrapper,
+  FormGroup,
+  FormInput,
+  FormTitle,
+  FormSelect,
 } from './Form.styled';
 
 const Form = () => {
   const [book, setBook] = useState({
-    title: null,
-    item_id: null,
-    category: null,
-    author: null,
+    title: '',
+    item_id: '',
+    category: '',
+    author: '',
   });
 
   const dispatch = useDispatch();
 
-  const categories = ['Action', 'Science Fiction', 'Economy', 'Engineerig', 'Software'];
+  const categories = [
+    'Action',
+    'Science Fiction',
+    'Economy',
+    'Engineerig',
+    'Software',
+  ];
 
   const handleChange = (e) => {
     setBook({
@@ -58,7 +68,11 @@ const Form = () => {
           value={book.title}
           onChange={handleChange}
         />
-        <FormSelect onChange={handleChange} name="category" value={book.category}>
+        <FormSelect
+          onChange={handleChange}
+          name="category"
+          value={book.category}
+        >
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}
