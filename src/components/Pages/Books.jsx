@@ -8,7 +8,6 @@ const Books = () => (
     <div className="book-item">
       <Book />
     </div>
-
     <Form />
   </Wrapper>
 );
