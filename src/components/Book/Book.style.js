@@ -43,12 +43,18 @@ const LeftWrapper = styled.div`
     color: ${({ theme }) => theme.colors.textDarkColor};
     font-size: 1.4rem;
     margin-bottom: 0.6rem;
+    word-break: break-all;
+    text-align: left;
   }
 
   p {
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
     color: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.devices.tab}) {
+    width: 40%;
   }
 `;
 
@@ -84,9 +90,5 @@ const RightWrapper = styled.div`
 `;
 
 export {
-  Wrapper,
-  LeftWrapper,
-  MiddleWrapper,
-  RightWrapper,
-  ButtonWrapper,
+  Wrapper, LeftWrapper, MiddleWrapper, RightWrapper, ButtonWrapper,
 };

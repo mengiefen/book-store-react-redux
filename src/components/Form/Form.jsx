@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { v4 as uid } from 'uuid';
 import { faker } from '@faker-js/faker';
-import * as actionCreators from '../../redux/books/books';
+import { addNewBook } from '../../redux/books/books';
+
 import { ButtonFill } from '../Button/Button.styled';
 import {
   Wrapper,
@@ -16,14 +16,12 @@ import {
 const Form = () => {
   const [book, setBook] = useState({
     title: '',
-    author: '',
-    progress: null,
-    id: '',
+    item_id: '',
     category: '',
+    author: '',
   });
 
   const dispatch = useDispatch();
-  const { addBook } = bindActionCreators(actionCreators, dispatch);
 
   const categories = [
     'Action',
@@ -36,23 +34,25 @@ const Form = () => {
   const handleChange = (e) => {
     setBook({
       ...book,
-      [e.target.name]: e.target.value.trim(),
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (book.category && book.title) {
-      addBook({
-        ...book,
-        id: uid(),
-        progress: Math.floor(Math.random() * 100),
-        author: faker.name.findName(),
-      });
+      dispatch(
+        addNewBook({
+          ...book,
+          item_id: uid(),
+          author: faker.name.findName(),
+        }),
+      );
       setBook({
-        ...book,
         title: '',
+        item_id: '',
         category: '',
+        author: '',
       });
     }
   };

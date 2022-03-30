@@ -11,6 +11,10 @@ const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundColor};
   padding: 0.5rem 1rem;
   font-family: 'Montserrat', sans-serif;
+
+  @media screen and (max-width: ${({ theme }) => theme.devices.tab}) {
+    width: 95%;
+  }
 `;
 
 const FormTitle = styled.h2`
