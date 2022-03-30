@@ -1,8 +1,4 @@
-import {
-  addNewBookToAPI,
-  getAllBooksFromAPI,
-  removeBookFromAPI,
-} from '../bookAPIServices';
+import { addNewBookToAPI, getAllBooksFromAPI, removeBookFromAPI } from '../bookAPIServices';
 
 const ADD = 'bookStore/books/ADD';
 const REMOVE = 'bookStore/books/REMOVE';

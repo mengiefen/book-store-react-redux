@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   padding: 0.5rem 1rem;
   font-family: 'Montserrat', sans-serif;
 
-  @media screen and (max-width: ${({ theme }) => theme.devices.tab}) {  
+  @media screen and (max-width: ${({ theme }) => theme.devices.tab}) {
     width: 95%;
   }
 `;

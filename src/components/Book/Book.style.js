@@ -90,9 +90,5 @@ const RightWrapper = styled.div`
 `;
 
 export {
-  Wrapper,
-  LeftWrapper,
-  MiddleWrapper,
-  RightWrapper,
-  ButtonWrapper,
+  Wrapper, LeftWrapper, MiddleWrapper, RightWrapper, ButtonWrapper,
 };

@@ -2,11 +2,7 @@ import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import {
-  Wrapper,
-  NavBar,
-  NavItem,
-  NavList,
-  UserProfileWrapper,
+  Wrapper, NavBar, NavItem, NavList, UserProfileWrapper,
 } from './Header.style';
 
 const Header = () => {
