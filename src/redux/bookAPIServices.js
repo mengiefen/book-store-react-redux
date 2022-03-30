@@ -7,3 +7,26 @@ const getAllBooksFromAPI = async () => {
   const data = await response.json();
   return data;
 };
+const removeBookFromAPI = async (id) => {
+  await fetch(`${BASE_URL}/${APP_ID}/books/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({
+      item_id: id,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+};
+
+const addNewBookToAPI = async (book) => {
+  await fetch(`${BASE_URL}/${APP_ID}/books/`, {
+    method: 'POST',
+    body: JSON.stringify(book),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+};
+
+export { getAllBooksFromAPI, removeBookFromAPI, addNewBookToAPI };
