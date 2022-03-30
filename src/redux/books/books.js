@@ -68,7 +68,6 @@ export const deleteBook = (id) => async (dispatch) => {
 
 export const addNewBook = (book) => async (dispatch) => {
   await addNewBookToAPI(book).then(() => {
-    console.log(book);
     dispatch(addBook(book));
   });
 };
