@@ -8,7 +8,7 @@ import { ButtonFill } from '../Button/Button.styled';
 const MessageBox = styled.p`
   padding: 3rem;
   color: ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  background-color: ${({ theme }) => theme.colors.light};
 `;
 
 function Categories() {
