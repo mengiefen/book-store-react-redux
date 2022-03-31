@@ -73,6 +73,7 @@ const Form = () => {
           name="category"
           value={book.category}
         >
+          <option value="">Choose Category</option>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}
