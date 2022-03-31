@@ -2,7 +2,7 @@
   "name": "book-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mengiefen.github.io/book-store-react-redux",
+  "homepage": "./",
   "dependencies": {
     "@faker-js/faker": "^6.0.0",
     "@reduxjs/toolkit": "^1.8.0",

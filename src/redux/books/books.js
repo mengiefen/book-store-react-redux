@@ -16,7 +16,7 @@ const bookReducer = (state = initialState, action) => {
     case FILTER:
       return state.filter((book) => book.category === action.category);
     case GET_BOOKS:
-      return [...state, ...action.books];
+      return action.books;
     default:
       return state;
   }
