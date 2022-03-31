@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { ButtonFill, ButtonOutline } from '../Button/Button.styled';
 import { getAllBooks, deleteBook, filterBooks } from '../../redux/books/books';
 import {
@@ -18,9 +19,14 @@ const Book = () => {
     dispatch(getAllBooks());
   }, []);
 
+  const bookList = [];
+  books.forEach((book) => {
+    bookList.push({ ...book, progress: Math.floor(Math.random() * 100) });
+  });
+
   return (
     <>
-      {books.map((book) => (
+      {bookList.map((book) => (
         <Wrapper key={book.item_id}>
           <LeftWrapper>
             <h4
@@ -46,29 +52,13 @@ const Book = () => {
           </LeftWrapper>
 
           <MiddleWrapper>
-            <div style={{ width: 60, height: 60 }}>
-              <CircularProgressbar
-                value={Math.floor(Math.random() * 100)}
-                maxValue={100}
-                styles={buildStyles({
-                  textSize: '16px',
-                  pathColor: '#0290ff',
-                })}
-              />
+            <div className="progressBar">
+              <CircularProgressbar value={book.progress} />
             </div>
 
             <div className="percentage">
-              {`${Math.floor(Math.random() * 100)}%`}
-              <span
-                style={{
-                  display: 'block',
-                  paddingLeft: '0.2rem',
-                  fontSize: '1rem',
-                  color: '#777',
-                }}
-              >
-                Completed
-              </span>
+              {`${book.progress}%`}
+              <span className="progressText">Completed</span>
             </div>
           </MiddleWrapper>
 

@@ -5,6 +5,12 @@ import styled from 'styled-components';
 import * as actionCreators from '../../redux/categories/categories';
 import { ButtonFill } from '../Button/Button.styled';
 
+const Wrapper = styled.div`
+ margin-top: 10rem;
+ font-size: 2rem;
+ text-transform: uppercase;
+ `;
+
 const MessageBox = styled.p`
   padding: 3rem;
   color: ${({ theme }) => theme.colors.primary};
@@ -20,10 +26,10 @@ function Categories() {
     checkStatus();
   };
   return (
-    <div style={{ marginTop: '10rem', fontSize: '2rem' }}>
+    <Wrapper>
       <MessageBox>{categories}</MessageBox>
       <ButtonFill onClick={handleClick}>Check Status</ButtonFill>
-    </div>
+    </Wrapper>
   );
 }
 

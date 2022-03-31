@@ -74,6 +74,18 @@ const MiddleWrapper = styled.div`
     font-size: 2rem; 
     font-family: 'Montserrat', sans-serif;
   }
+
+  .progressBar {
+    width: 60px;
+    height: 60px;    
+  }
+
+  .progressText {
+    display: block;
+    padding-left: 0.2rem;
+    font-size: 1rem;
+    color:  ${({ theme }) => theme.colors.warmGrey};               
+  }
 `;
 
 const RightWrapper = styled.div`
