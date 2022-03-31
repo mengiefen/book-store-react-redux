@@ -20,12 +20,12 @@ body {
 .App {
   text-align: center;
   background-color: #fafafa;
-  width: 90%;
-  min-height: 100vh;
+  width: 87.5%;
+  min-height: 95vh;
   margin: 0 auto;
   padding: 1rem;
   position: relative;
-  box-shadow: 5px 0 100px rgba(0, 0, 0, 0.1), -5px 0 100px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
 }
 
 @media screen and (max-width: 1024px) {
